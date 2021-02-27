@@ -7,7 +7,7 @@ export function Home() {
 	let showArray = [];
 
 	const updateTodos = e => {
-		setTodos(e.target.values);
+		setTodos(e.target.value);
 	};
 
 	const Handlead = () => {
@@ -25,7 +25,7 @@ export function Home() {
 	return (
 		<div className="text-center mt-5">
 			<div>Todo List</div>
-			<input onChange={updateTodos} value={todos} />
+			<input onChange={e => setTodos(e.target.value)} />
 			<button className="btn btn-warning" onClick={Handlead}>
 				add to list
 			</button>
