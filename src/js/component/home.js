@@ -26,7 +26,7 @@ export function Home() {
 	return (
 		<div
 			className="text-center mt-5"
-			style={{ width: "40%", margin: "auto" }}>
+			style={{ width: "35%", margin: "auto" }}>
 			<div>Todo List</div>
 			<input onChange={e => setTodos(e.target.value)} />
 			<button className="btn btn-warning" onClick={Handlead}>
@@ -36,8 +36,8 @@ export function Home() {
 				<div
 					key={index}
 					className="border row"
-					unMouseEnter={() => setTrash(!trash)}
-					unMouseLeave={() => setTrash(!trash)}>
+					onMouseEnter={() => setTrash(!trash)}
+					onMouseLeave={() => setTrash(!trash)}>
 					<div className="d-flex justify-content-start col">
 						<p>{item}</p>
 					</div>
