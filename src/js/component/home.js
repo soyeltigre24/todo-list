@@ -23,11 +23,13 @@ export function Home() {
 			return showArray.push(todoslist[i]);
 	};
 
-	const deleteTodoslist = (arr, todos) => {
-		return arr.filter(e => {
-			return;
-		});
+	const deleteTodoslist = selectedindex => {
+		const newList = todoslist.filter(
+			(item, index) => index != selectedindex
+		);
+		setTodoslist(newList);
 	};
+
 	return (
 		<div
 			className="text-center mt-5"
@@ -48,10 +50,7 @@ export function Home() {
 					</div>
 					<div className="d-flex justify-content-end col">
 						{!trash === false ? (
-							<button
-								onClick={() =>
-									deleteTodoslist(todoslist, todos)
-								}>
+							<button onClick={() => deleteTodoslist(index)}>
 								<i className="fas fa-window-close"></i>
 							</button>
 						) : (
