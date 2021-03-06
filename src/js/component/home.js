@@ -28,6 +28,7 @@ export function Home() {
 			(item, index) => index != selectedindex
 		);
 		setTodoslist(newList);
+		setTrash(false);
 	};
 
 	return (
@@ -35,7 +36,7 @@ export function Home() {
 			className="text-center mt-5"
 			style={{ width: "35%", margin: "auto" }}>
 			<div>Todo List</div>
-			<input onChange={e => setTodos(e.target.value)} />
+			<input onChange={e => setTodos(e.target.value)} value={todos} />
 			<button className="btn btn-warning" onClick={Handlead}>
 				add to list
 			</button>
@@ -43,8 +44,8 @@ export function Home() {
 				<div
 					key={index}
 					className="border row"
-					onMouseEnter={() => setTrash(!trash)}
-					onMouseLeave={() => setTrash(!trash)}>
+					onMouseEnter={() => setTrash(true)}
+					onMouseLeave={() => setTrash(false)}>
 					<div className="d-flex justify-content-start col">
 						<p>{item}</p>
 					</div>
